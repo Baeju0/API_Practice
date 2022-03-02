@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+https://openweathermap.org/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Open Weather Map 사이트에 있는 오픈 api 키를 발급
 
-## Available Scripts
+useEffect를 사용하여 해당 컴포넌트(Weather)실행 시 바로 실행되게 함
+axios 라이브러리를 이용하여 json문서 요청 링크+키값 입력하여 ajax 요청, get방식으로 json 문서 조회
 
-In the project directory, you can run:
+Loading과 error라는 useState를 만들어 놓음
+요청하기 시작할 때, Weather와 Error의 값을 초기화하고 setLoading은 true로 하여 loading값이 참일 때 로딩중 이라는 UI 띄우기
+불러오기를 성공했다면 response라는 변수에 데이터 저장하고 setWeahter를 통해 weahter라는 state에 데이터 저장
+(데이터가 잘 조회되나 확인을 위해 console.log로 찍어봄)
 
-### `yarn start`
+불러오기 실패 시 error 실행하여 에러라는 UI 띄움
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+json에 있는 데이터 중 기온과 지역, 날씨 정보와 날씨 정보에 따른 아이콘 가져오기
+그 중에 날씨 정보에 따른 아이콘은 icon이라는 useState를 만들어 setIcon를 통해 값을 저장하고
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+중간에 변수명을 끼울 수 있는(?) <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`}/>으로 url을 감싸는 ``기호와 변수 사용하기 위해 ${}로 입력
+원래 사용하던 <img src= {'http://openweathermap.org/img/wn/'+{icon}+'@2x.png'}/> 와 같은 방식은 먹히지 않았음
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+그리고 기온은 api를 제공해주는 사이트에서 켈빈(K)이라는 단위를 사용했기 때문에, 우리나라에서 사용하는 단위인 섭씨로 바꾸기 위해
+(불러온 기온(K)-273.15)로 입력 후 Math.floor함수를 사용하여 소수점은 잘라냄
