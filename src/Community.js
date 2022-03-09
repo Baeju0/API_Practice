@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import './Community.css';
 
-// 커뮤니티 글 작성 연습?
-
-function Community() {
+function Community(props) {
     let co = { fontSize: "20px" };
 
     let [post, setPost] = useState(['첫번째 글']);
@@ -12,11 +10,12 @@ function Community() {
     let [entry, setEntry] = useState('');
     // let [title, setTitle] = useState(['안녕하세요!']);
 
-    function postAdd() {
+    function postAdd(props) {
         var newPost = [...post];
-        newPost.unshift(entry);
+        newPost.unshift(props.title);
         setPost(newPost);
     }
+    
     // function titleAdd() {
     //     var newTitle = [...title];
     //     newTitle.unshift(title);
@@ -36,20 +35,19 @@ function Community() {
           })
           }
         
+        {/* assign() 파라미터로 전달한 URL에서 리소스를 로드 */}
           <button onClick={()=> {
-              setModal(!modal);
+              window.location.assign("/write");
           }}>글쓰기</button>
           
-          <p></p>
+          {/* <p></p>
           {modal ? <input onChange={(e)=>{
               setEntry(e.target.value)
           }}/>: null}
-          {/* {modal ? <input onChange={(e)=>{
-              titleAdd(e)
-          }}/>: null} */}
+        
           {modal ?<button onClick={(e)=> {
               postAdd(e)
-          }}>저장</button>: null}
+          }}>저장</button>: null} */}
           </div>
     )
 }
