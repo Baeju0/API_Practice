@@ -5,15 +5,17 @@ import Radio from './Radio';
 import Select from './Select';
 import HeaderLogin from './HeaderLogin';
 import Header from './Header';
+import LocalStorageComponent from './LocalStorageComponent';
 
 function App() {
   return (
     <div>
-      <Header/>
-      <HeaderLogin/>
+      {/* <Header/>
+      <HeaderLogin/> */}
     {/* <Weather/> */}
     {/* <Radio/> */}
     {/* <Select/> */}
+    <LocalStorageComponent/>
     </div>
   );
 }
