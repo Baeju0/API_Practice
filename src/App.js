@@ -6,6 +6,7 @@ import Select from './Select';
 import HeaderLogin from './HeaderLogin';
 import Header from './Header';
 import LocalStorageComponent from './LocalStorageComponent';
+import Counter from './useCallback';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
     {/* <Weather/> */}
     {/* <Radio/> */}
     {/* <Select/> */}
-    <LocalStorageComponent/>
+    {/* <LocalStorageComponent/> */}
+    <Counter/>
     </div>
   );
 }
