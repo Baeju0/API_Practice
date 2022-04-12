@@ -9,6 +9,7 @@ import Header from './Header';
 import LocalStorageComponent from './LocalStorageComponent';
 import Counter from './useCallback';
 import Propsss from './Props';
+import IFRender from './IFRender';
 
 function App(props) {
   let [name, setName] = useState(['Juyoung','Window','Mac']);
@@ -22,8 +23,9 @@ function App(props) {
     {/* <Select/> */}
     {/* <LocalStorageComponent/> */}
     {/* <Counter/> */}
-    <h1>안녕하세요!{name}</h1>
-    <App name={name}/>
+    {/* <h1>안녕하세요!{name}</h1>
+    <App name={name}/> */}
+    <IFRender/>
     </div>
   );
 }
