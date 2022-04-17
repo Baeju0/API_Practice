@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import './Community.css';
+// import './Community.css';
 
 function Community(props) {
     let co = { fontSize: "20px" };
