@@ -13,6 +13,7 @@ import Counter from './useCallback';
 import Propsss from './Props';
 import IFRender from './IFRender';
 import Community from './Community';
+import Context from './Context';
 
 function App() {
   // let [name, setName] = useState(['Juyoung','Window','Mac']);
@@ -33,7 +34,8 @@ function App() {
     {/* <IFRender/> */}
     {/* <h2 className='name1'>hello{name[0]}</h2> */}
 
-    <Community/>
+    {/* <Community/> */}
+    <Context/>
     </div>
   );
 }
