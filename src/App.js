@@ -14,6 +14,7 @@ import Propsss from './Props';
 import IFRender from './IFRender';
 import Community from './Community';
 import Context from './Context';
+import SortedWords from './SortedWords';
 
 function App() {
   // let [name, setName] = useState(['Juyoung','Window','Mac']);
@@ -35,7 +36,8 @@ function App() {
     {/* <h2 className='name1'>hello{name[0]}</h2> */}
 
     {/* <Community/> */}
-    <Context/>
+    {/* <Context/> */}
+    <SortedWords/>
     </div>
   );
 }
