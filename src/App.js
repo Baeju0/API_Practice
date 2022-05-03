@@ -15,6 +15,7 @@ import IFRender from './IFRender';
 import Community from './Community';
 import Context from './Context';
 import SortedWords from './SortedWords';
+import UseState from './UseState';
 
 function App() {
   // let [name, setName] = useState(['Juyoung','Window','Mac']);
@@ -37,7 +38,8 @@ function App() {
 
     {/* <Community/> */}
     {/* <Context/> */}
-    <SortedWords/>
+    {/* <SortedWords/> */}
+    <UseState/>
     </div>
   );
 }
