@@ -16,6 +16,7 @@ import Community from './Community';
 import Context from './Context';
 import SortedWords from './SortedWords';
 import UseState from './UseState';
+import UseEffect from './UseEffect';
 
 function App() {
   // let [name, setName] = useState(['Juyoung','Window','Mac']);
@@ -39,7 +40,8 @@ function App() {
     {/* <Community/> */}
     {/* <Context/> */}
     {/* <SortedWords/> */}
-    <UseState/>
+    {/* <UseState/> */}
+    <UseEffect/>
     </div>
   );
 }
