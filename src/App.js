@@ -18,6 +18,7 @@ import SortedWords from './SortedWords';
 import UseState from './UseState';
 import UseEffect from './UseEffect';
 import UseRef from './UseRef';
+import UseContext from './UseContext';
 
 function App() {
   // let [name, setName] = useState(['Juyoung','Window','Mac']);
@@ -43,7 +44,8 @@ function App() {
     {/* <SortedWords/> */}
     {/* <UseState/> */}
     {/* <UseEffect/> */}
-    <UseRef/>
+    {/* <UseRef/> */}
+    <UseContext/>
     </div>
   );
 }
