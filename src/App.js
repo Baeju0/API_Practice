@@ -19,6 +19,7 @@ import UseState from './UseState';
 import UseEffect from './UseEffect';
 import UseRef from './UseRef';
 import UseContext from './UseContext';
+import UseReducer from './UseReducer';
 
 function App() {
   // let [name, setName] = useState(['Juyoung','Window','Mac']);
@@ -45,7 +46,8 @@ function App() {
     {/* <UseState/> */}
     {/* <UseEffect/> */}
     {/* <UseRef/> */}
-    <UseContext/>
+    {/* <UseContext/> */}
+    <UseReducer/>
     </div>
   );
 }
