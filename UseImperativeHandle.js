@@ -17,7 +17,7 @@ function UseImperativeHandle(props, ref) {
     // 1. input ref={inputRef}를 렌더링한 부모 컴포넌트를
     return <input ref={inputRef} ... />; //왜 오류!? props 가져온 게 없어서?
   }
-  
+
   FancyInput = forwardRef(FancyInput);
 
   export default UseImperativeHandle;
