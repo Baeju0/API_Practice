@@ -20,12 +20,30 @@ import UseEffect from './UseEffect';
 import UseRef from './UseRef';
 import UseContext from './UseContext';
 import UseReducer from './UseReducer';
+import { useEffect } from 'react';
 
 function App() {
   // let [name, setName] = useState(['Juyoung','Window','Mac']);
+  
+  // sync & async 동기방식?
+  let [count, setCount] = useState(0);
+  let [age, setAge] = useState(10);
+  
+  useEffect(()=>{
+    if (count != 0 && count < 3) {
+      setAge(age+1)
+    }
+  },[count])
+
 
   return (
     <div>
+      <div>내 나이는 {age}</div>
+      <button onClick={()=>{
+      setCount(count+1);
+    }}>눌러보세요!</button>
+
+
       {/* <Header/>
       <HeaderLogin/> */}
     {/* <Weather/> */}
